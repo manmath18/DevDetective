@@ -1,7 +1,6 @@
 const API="https://api.github.com/users/"
 const get=(element)=>document.getElementById(`${element}`);
 
-
 const input=get("input");
 const btn=get("btn");
 
