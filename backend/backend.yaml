@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dev-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dev-backend
+  template:
+    metadata:
+      labels:
+        app: dev-backend
+    spec:
+      containers:
+      - name: dev-backend
+        image: manmath18/det_back:latest
+        ports:
+        - containerPort: 4904
+        env:
+        - name: MONGODB_URI
+          value: "mongodb+srv://manmathmungde41:21gFK47M0a9ITglt@cluster0.gah6m.mongodb.net/"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dev-backend-service
+spec:
+  type: NodePort
+  ports:
+  - port: 4904
+    targetPort: 4904
+    nodePort: 30064
+  selector:
+    app: dev-backend

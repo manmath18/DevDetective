@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dev-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dev-frontend
+  template:
+    metadata:
+      labels:
+        app: dev-frontend
+    spec:
+      containers:
+      - name: dev-frontend
+        image: manmath18/det_front:latest
+        ports:
+        - containerPort: 9563
+        env:
+        - name: BACKEND_URL
+          value: "http://dev-backend-service:4904/api"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dev-frontend-service
+spec:
+  type: NodePort
+  ports:
+    - port: 9563
+      targetPort: 9563
+      nodePort: 30063
+  selector:
+    app: dev-frontend

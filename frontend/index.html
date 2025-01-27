@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>DevDetective</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="manifest" href="assets\site.webmanifest">
+    <link rel="icon" href="assets\favicon.ico">
+<body>
+    <div class="wrapper">
+        <div class="container">
+        <header class="header">
+        <h1 class="title">DevDetective</h1>
+        <div class="btn" id="modeBtn">
+            <p id="modeText">DARK</p>
+            <img 
+            src="" 
+            alt=""
+            id="modeIcon"
+            loading="lazy"
+            >
+        </div>
+    </header>
+    <main>
+        <div class="searchContainer">
+            <input
+            type="text" 
+            id="input" 
+            placeholder="Enter a Github Username....."
+            required
+            autofocus
+            >
+            <div class="error">
+                <p id="noResults">no search results</p>
+              </div>
+            <button id="btn">Search</button>
+        </div>
+        <div class="profileContainer">
+            <div class="profileContent">
+                <div class="profileHeader">
+                    <img id="userImage" loading="lazy">
+                    <div class="profileName">
+                        <h2 class="name"></h2>
+                        <a 
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        id="username"
+                        href=""></a>
+                        <p id="date"></p>
+                    </div>
+                </div>
+                <p class="profileBio"></p>
+                <div class="statsContainer">
+                    <div class="profileStats">
+                        <p class="statsTitle">Repos</p>
+                        <a id="repos"></a>
+                    </div>
+                    <div class="profileStats">
+                        <p class="statsTitle">Followers</p>
+                        <a id="followers"></a>
+                    </div>
+                    <div class="profileStats">
+                        <p class="statsTitle">Following</p>
+                        <a id="following"></a>
+                    </div>
+                </div>
+                <div class="profileFooter">
+                    <div class="profileInfo">
+                        <div class="bottomIcon">
+                            <img 
+                            src="assets\location-icon.svg"
+                            alt=""
+                            loading="lazy"
+                            >
+                        </div>
+                        <a id="location"></a>
+                    </div>
+                    <div class="profileInfo">
+                        <div class="bottomIcon">
+                            <img 
+                            src="assets\website-icon.svg"
+                            alt=""
+                            loading="lazy"
+                            >
+                        </div>
+                        <a id="website"></a>
+                    </div>
+                    <div class="profileInfo">
+                        <div class="bottomIcon">
+                            <img 
+                            src="assets\twitter-icon.svg"
+                            alt=""
+                            loading="lazy"
+                            >
+                        </div>
+                        <a id="twitter"></a>
+                    </div>
+                    <div class="profileInfo">
+                        <div class="bottomIcon">
+                            <img 
+                            src="assets\company-icon.svg"
+                            alt=""
+                            loading="lazy"
+                            >
+                        </div>
+                        <a id="company"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <button id="viewHistoryBtn" class="viewHistoryBtn">View Search History</button>
+    <div id="historyContainer" class="historyContainer"></div>
+    </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
