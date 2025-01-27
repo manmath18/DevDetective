@@ -19,7 +19,7 @@ spec:
         - containerPort: 4904
         env:
         - name: MONGODB_URI
-          value: "mongodb+srv://manmathmungde41:21gFK47M0a9ITglt@cluster0.gah6m.mongodb.net/"
+          value:"mongodb_atlas_link"
 ---
 apiVersion: v1
 kind: Service
